@@ -18,7 +18,13 @@ function addEvent(event) {
   if (error) {
     throw new Error(`Invalid event data: ${error.details[0].message}`);
   }
-  events.push(event);
+
+  // Convert dates to UTC and save timezone information
+  const startDate = new Date(event.startDate).toISOString();
+  const endDate = new Date(event.endDate).toISOString();
+  const timezone = event.timezone;
+
+  events.push({ ...event, startDate, endDate, timezone });
 }
 
 // Function to get all events
