@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const moment = require('moment-timezone');
 const Joi = require('joi');
@@ -6,6 +7,7 @@ const { addEvent, getEvents } = require('./models/event');
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
@@ -28,7 +30,8 @@ app.get('/events', (req, res) => {
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send({ error: 'An unexpected error occurred' });
-  });
+});
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server running on port ${port}`));

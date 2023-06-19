@@ -1,0 +1,33 @@
+.events {
+    width: 80%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+.events-title {
+    text-align: center;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+p {
+    margin: 0;
+    color: #666;
+}
